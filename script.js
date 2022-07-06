@@ -25,26 +25,31 @@ function playRound(playerSelection, computerSelection) {
 
     console.log(computerSelection)
 
-   
     if ( //Win conditions
         (playerSelection === "rock" && computerSelection === "scissors") ||
         (playerSelection === "scissors" && computerSelection === "paper") || 
         (playerSelection === "paper" && computerSelection === "rock")
     ) {
-        console.log("you won!")
-        return "You won!"
-    } else if ( // lose conditions
+        let result = "you won"
+        console.log(result)
+        return result 
+
+    } else if ( //lose conditions
         (playerSelection === "scissors" && computerSelection === "rock") ||
         (playerSelection === "paper" && computerSelection === "scissors") ||
         (playerSelection === "rock" && computerSelection === "paper")
     ) {
-        console.log("you lost.")
-        return "You lost."
-    } else if ( //draw conditions
+        let result = "you lost"
+        console.log(result)
+        return result
+        
+    } else if ( //tie conditions
         playerSelection === computerSelection 
     ) {
-        console.log("its a draw")
-        return "Its a draw :/"
+        let result = "its a tie"
+        console.log(result)
+        return result
+        
     } else {
         alert("something went wrong")
     }
@@ -53,6 +58,23 @@ function playRound(playerSelection, computerSelection) {
 playRound()
 
 
+// create a new function called game()
+// call the playRound() function inside the game() function
+// game() function should play a 5 round game
+// game() function should keep score and report a winner or loser at the end
+
+function game() {
+    for(let i = 0; i < 4; i++){
+        
+        playRound(i)
+
+    }
+    
+
+
+}
+
+game()
 
 
  
