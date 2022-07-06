@@ -25,62 +25,34 @@ function playRound(playerSelection, computerSelection) {
 
     console.log(computerSelection)
 
-    const result = ["win", "lose", "draw"]
    
-    if (playerSelection == "rock" && computerSelection == "scissors") {
-        
-        console.log("You won, rock beats scissors!");
-        return result[0]
-
-    } else if (playerSelection == "rock" && computerSelection == "paper") {
-        
-        console.log("You lost, paper beats rock!");
-        return result[1]
-
-    } else if (playerSelection == "rock" && computerSelection == "rock") {
-        
-        console.log("Its a tie!");
-        return result[2]
-
-    } else if (playerSelection == "paper" && computerSelection == "rock") {
-        
-        console.log("You won, paper beats rock!");
-        return result[0]
-
-    } else if (playerSelection == "paper" && computerSelection == "scissors") {
-
-        console.log("You lost, paper loses to scissors!")
-        return result[1]
-
-    } else if (playerSelection == "paper" && computerSelection == "paper") {
-
-        console.log("Its a tie!")
-        return result[2]
-
-    } else if (playerSelection == "scissors" && computerSelection == "paper") {
-
-        console.log("You win, scissors beats paper!")
-        return result[0]
-
-    } else if (playerSelection == "scissors" && computerSelection == "rock") {
-
-        console.log("You lost, scissors loses to rock!")
-        return result[1]
-
-    } else if (playerSelection == "scissors" && computerSelection == "scissors") {
-
-        console.log("Its a tie!")
-        return result[2]
-
+    if ( //Win conditions
+        (playerSelection === "rock" && computerSelection === "scissors") ||
+        (playerSelection === "scissors" && computerSelection === "paper") || 
+        (playerSelection === "paper" && computerSelection === "rock")
+    ) {
+        console.log("you won!")
+        return "You won!"
+    } else if ( // lose conditions
+        (playerSelection === "scissors" && computerSelection === "rock") ||
+        (playerSelection === "paper" && computerSelection === "scissors") ||
+        (playerSelection === "rock" && computerSelection === "paper")
+    ) {
+        console.log("you lost.")
+        return "You lost."
+    } else if ( //draw conditions
+        playerSelection === computerSelection 
+    ) {
+        console.log("its a draw")
+        return "Its a draw :/"
     } else {
-        
-        console.log("something went wrong :(")
-
+        alert("something went wrong")
     }
-
 }
 
 playRound()
-const playerSelection = "rock";
-const computerSelection = computerPlay()
-console.log(playRound(playerSelection, computerSelection))
+
+
+
+
+ 
