@@ -55,23 +55,18 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-playRound()
-
+const result = playRound()
 
 // create a new function called game()
 // call the playRound() function inside the game() function
-// game() function should play a 5 round game
+// game() function should play a 5 round game i.e. repeat playRound() 5 times
 // game() function should keep score and report a winner or loser at the end
 
 function game() {
-    for(let i = 0; i < 4; i++){
-        
+    for(let i = 0; i < 5; i++){
         playRound(i)
-
+        console.log(result)
     }
-    
-
-
 }
 
 game()
