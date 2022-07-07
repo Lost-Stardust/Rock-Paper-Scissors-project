@@ -62,14 +62,30 @@ function playRound() {
 // game() function should play a 5 round game i.e. repeat playRound() 5 times
 // game() function should keep score and report a winner or loser at the end
 
+
+let playerScore = 0
+let computerScore = 0
+
 function game() {
     for(let i = 0; i < 5; i++){
         const result = playRound(i)
-        console.log(result)
-    }
+        
+        //score counter 
+
+        if (result === "you won") {
+            ++playerScore
+            console.log(`player score: ${playerScore}`)
+        } else if (result === "you lost") {
+            ++computerScore 
+            console.log(`computer score: ${computerScore}`)
+        } else if (result === "its a tie") {
+            console.log("no point awarded to either party.")
+        }
+
+        console.log(playerScore)
+        console.log(computerScore)
+ }
 }
 
 game()
 
-
- 
