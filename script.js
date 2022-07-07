@@ -16,7 +16,7 @@ function computerPlay() {
 //playerSelection parameter should be case insensitive
 
 
-function playRound(playerSelection, computerSelection) {
+function playRound() {
     playerSelection = prompt("Choose your weapon!").toLowerCase()
 
     console.log(playerSelection) 
@@ -30,7 +30,7 @@ function playRound(playerSelection, computerSelection) {
         (playerSelection === "scissors" && computerSelection === "paper") || 
         (playerSelection === "paper" && computerSelection === "rock")
     ) {
-        let result = "you won"
+        const result = "you won"
         console.log(result)
         return result 
 
@@ -39,14 +39,14 @@ function playRound(playerSelection, computerSelection) {
         (playerSelection === "paper" && computerSelection === "scissors") ||
         (playerSelection === "rock" && computerSelection === "paper")
     ) {
-        let result = "you lost"
+        const result = "you lost"
         console.log(result)
         return result
         
     } else if ( //tie conditions
         playerSelection === computerSelection 
     ) {
-        let result = "its a tie"
+        const result = "its a tie"
         console.log(result)
         return result
         
@@ -55,7 +55,7 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-const result = playRound()
+
 
 // create a new function called game()
 // call the playRound() function inside the game() function
@@ -64,7 +64,7 @@ const result = playRound()
 
 function game() {
     for(let i = 0; i < 5; i++){
-        playRound(i)
+        const result = playRound(i)
         console.log(result)
     }
 }
