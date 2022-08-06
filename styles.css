@@ -24,3 +24,12 @@ button {
 #scissors:hover {
     background-color: yellow;
 }
+
+#results {
+    display: flex;
+}
+
+p {
+    margin: 10px;
+    font-size: 30px;
+}
