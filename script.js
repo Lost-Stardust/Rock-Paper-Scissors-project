@@ -17,6 +17,8 @@ function computerPlay() {
 //write conditionals for each case of rock, paper, scissors
 //playerSelection parameter should be case insensitive
 
+let result = '';
+
 function playRound(playerSelection) {
 
     //invokes computerPlay() function to let computer make its choice
@@ -29,44 +31,47 @@ function playRound(playerSelection) {
         (playerSelection == "scissors" && computerSelection == "paper") || 
         (playerSelection == "paper" && computerSelection == "rock")
     ) {
-        const result = "you won"
-        console.log(result)
-        return result 
+        result = "you won";
+        console.log(result);
+        return result;
 
     } else if ( //lose conditions
         (playerSelection == "scissors" && computerSelection == "rock") ||
         (playerSelection == "paper" && computerSelection == "scissors") ||
         (playerSelection == "rock" && computerSelection == "paper")
     ) {
-        const result = "you lost"
-        console.log(result)
-        return result
+        result = "you lost";
+        console.log(result);
+        return result;
         
     } else if ( //tie conditions
         playerSelection == computerSelection 
     ) {
-        const result = "its a tie"
-        console.log(result)
-        return result
+        result = "its a tie";
+        console.log(result);
+        return result;
         
     } else {
         alert("something went wrong")
     }
 }
 
-
+const results = document.getElementById('results');
 const rock = document.getElementById('rock');
 const paper = document.getElementById('paper');
 const scissors = document.getElementById('scissors');
 
 rock.addEventListener('click', () => {
     playRound("rock");
+    game()
 });
 paper.addEventListener('click', () => {
     playRound("paper");
+    game()
 });
 scissors.addEventListener('click', () => {
     playRound("scissors");
+    game();
 });
 
 
@@ -91,12 +96,12 @@ function game() {
 
     if (result === "you won") {
         ++playerScore
-        console.log(`player score: ${playerScore}`)
+        results.textContent = `computer score: ${computerScore}   player score: ${playerScore}`
     } else if (result === "you lost") {
         ++computerScore 
-        console.log(`computer score: ${computerScore}`)
+        results.textContent = `computer score: ${computerScore}   player score: ${playerScore}`
     } else if (result === "its a tie") {
-        console.log("no point awarded to either party.")
+        results.textContent = `computer score: ${computerScore}   player score: ${playerScore}`
     }
 
         console.log(playerScore)
@@ -108,14 +113,14 @@ function game() {
     //if player and computer has equal points then declare draw
     //if player has more points declare player the winner
     //if computer has more points declare computer the winner
-    if (playerScore === computerScore) {
-        console.log("The game was a draw, would you like to play again?")
-    } else if (playerScore > computerScore) {
-        console.log("You are the winner! :)")
-    } else if (playerScore < computerScore) {
-        console.log("The computer is the winner :(")
-    }
+//     if (playerScore === computerScore) {
+//         console.log("The game was a draw, would you like to play again?")
+//     } else if (playerScore > computerScore) {
+//         console.log("You are the winner! :)")
+//     } else if (playerScore < computerScore) {
+//         console.log("The computer is the winner :(")
+//     }
 }
 
-game()
+
 
