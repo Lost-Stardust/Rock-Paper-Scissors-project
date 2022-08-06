@@ -70,9 +70,6 @@ scissors.addEventListener('click', () => {
 });
 
 
-
-
-
 // declare playerScore and computerScore 
 // to be used in game() function to keep score
 
@@ -85,47 +82,40 @@ let computerScore = 0
 // game() function should play a 5 round game i.e. repeat playRound() 5 times
 // game() function should keep score and report a winner or loser at the end
 
-// function game() {
+function game() {
+      
+    //score counter 
+    //if result comes out to be "you won" then add point to player
+    //if result comes out to be "you lost" then add point to computer
+    //if result comes out to be "its a tie" then no points given to either party 
+
+    if (result === "you won") {
+        ++playerScore
+        console.log(`player score: ${playerScore}`)
+    } else if (result === "you lost") {
+        ++computerScore 
+        console.log(`computer score: ${computerScore}`)
+    } else if (result === "its a tie") {
+        console.log("no point awarded to either party.")
+    }
+
+        console.log(playerScore)
+        console.log(computerScore)
+
     
-//     //repeats or loops the playRound() function 5 times
-//     for(let i = 0; i < 5; i++){
-        
-//         //return the result of playRound() function 
-//         //and also invoke playRound() to play 5 rounds
-//         const result = playRound(i)
-        
-//         //score counter 
-//         //if result comes out to be "you won" then add point to player
-//         //if result comes out to be "you lost" then add point to computer
-//         //if result comes out to be "its a tie" then no points given to either party 
 
-//         if (result === "you won") {
-//             ++playerScore
-//             console.log(`player score: ${playerScore}`)
-//         } else if (result === "you lost") {
-//             ++computerScore 
-//             console.log(`computer score: ${computerScore}`)
-//         } else if (result === "its a tie") {
-//             console.log("no point awarded to either party.")
-//         }
+    //declare a winner by comparing points of player and computer
+    //if player and computer has equal points then declare draw
+    //if player has more points declare player the winner
+    //if computer has more points declare computer the winner
+    if (playerScore === computerScore) {
+        console.log("The game was a draw, would you like to play again?")
+    } else if (playerScore > computerScore) {
+        console.log("You are the winner! :)")
+    } else if (playerScore < computerScore) {
+        console.log("The computer is the winner :(")
+    }
+}
 
-//         console.log(playerScore)
-//         console.log(computerScore)
-
-//     }
-
-//     //declare a winner by comparing points of player and computer
-//     //if player and computer has equal points then declare draw
-//     //if player has more points declare player the winner
-//     //if computer has more points declare computer the winner
-//     if (playerScore === computerScore) {
-//         console.log("The game was a draw, would you like to play again?")
-//     } else if (playerScore > computerScore) {
-//         console.log("You are the winner! :)")
-//     } else if (playerScore < computerScore) {
-//         console.log("The computer is the winner :(")
-//     }
-// }
-
-// game()
+game()
 
