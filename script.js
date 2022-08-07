@@ -33,7 +33,6 @@ function playRound(playerSelection) {
         (playerSelection == "paper" && computerSelection == "rock")
     ) {
         result = "you won";
-        console.log(result);
         return result;
 
     } else if ( //lose conditions
@@ -42,14 +41,12 @@ function playRound(playerSelection) {
         (playerSelection == "rock" && computerSelection == "paper")
     ) {
         result = "you lost";
-        console.log(result);
         return result;
         
     } else if ( //tie conditions
         playerSelection == computerSelection 
     ) {
         result = "its a tie";
-        console.log(result);
         return result;
         
     } else {
@@ -108,9 +105,6 @@ function game() {
     } else if (result === "its a tie") {
         return;
     }
-
-        console.log(playerScore)
-        console.log(computerScore)
 
     
 
