@@ -23,8 +23,9 @@ function playRound(playerSelection) {
 
     //invokes computerPlay() function to let computer make its choice
     computerSelection = computerPlay()
-    console.log(playerSelection)
-    console.log(computerSelection)
+
+    const selection = document.getElementById('selection');
+    selection.textContent = `${playerSelection} vs ${computerSelection}`;
 
     if ( //Win conditions
         (playerSelection == "rock" && computerSelection == "scissors") ||
