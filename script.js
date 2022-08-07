@@ -151,6 +151,7 @@ const overlay = document.getElementById('overlay');
 playAgain.addEventListener('click', () => {
     modal.classList.remove('active');
     overlay.classList.remove('active');
+    location.reload()
 });
 
 
