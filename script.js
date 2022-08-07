@@ -117,18 +117,40 @@ function game() {
 
     
 
-    //declare a winner by comparing points of player and computer
-    //if player and computer has equal points then declare draw
-    //if player has more points declare player the winner
-    //if computer has more points declare computer the winner
-//     if (playerScore === computerScore) {
-//         console.log("The game was a draw, would you like to play again?")
-//     } else if (playerScore > computerScore) {
-//         console.log("You are the winner! :)")
-//     } else if (playerScore < computerScore) {
-//         console.log("The computer is the winner :(")
-//     }
-}
+    // add text in popup 
+    // show pop up to declare winner
+    // if player has more points declare player the winner
+    // if computer has more points declare computer the winner
 
+    if (playerScore == 5 || computerScore == 5) {
+
+        if (playerScore > computerScore) {
+            
+            const p = document.createElement('p');
+            playAgain.textContent = "Play again?";
+            modal.insertBefore(p, modal.firstElementChild)
+            p.textContent = "You are the winner! :)";
+            modal.classList.add('active');
+            overlay.classList.add('active');
+
+        } else if (playerScore < computerScore) {
+            
+            const p = document.createElement('p');
+            playAgain.textContent = "Play again?";
+            modal.insertBefore(p, modal.firstElementChild)
+            p.textContent = "You lost :(";
+            modal.classList.add('active');
+            overlay.classList.add('active');
+        }
+    }
+}
+const playAgain = document.getElementById('playAgain');
+const modal = document.getElementById('modal');
+const overlay = document.getElementById('overlay');
+
+playAgain.addEventListener('click', () => {
+    modal.classList.remove('active');
+    overlay.classList.remove('active');
+});
 
 
