@@ -104,10 +104,10 @@ function game() {
 
     if (result === "you won") {
         ++playerScore
-        para1.textContent = `computer score: ${playerScore}`
+        para1.textContent = `Player score: ${playerScore}`
     } else if (result === "you lost") {
         ++computerScore 
-        para2.textContent = `player score: ${computerScore}`
+        para2.textContent = `Computer score: ${computerScore}`
     } else if (result === "its a tie") {
         return;
     }
