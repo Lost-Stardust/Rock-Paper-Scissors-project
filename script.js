@@ -24,7 +24,6 @@ function playRound(playerSelection) {
     //invokes computerPlay() function to let computer make its choice
     computerSelection = computerPlay()
 
-    const selection = document.getElementById('selection');
     selection.textContent = `${playerSelection} vs ${computerSelection}`;
 
     if ( //Win conditions
@@ -55,6 +54,7 @@ function playRound(playerSelection) {
 }
 
 const results = document.getElementById('results');
+const selection = document.getElementById('selection');
 
 const para1 = document.getElementsByClassName('para1').item(0)
 const para2 = document.getElementsByClassName('para2').item(0)
@@ -103,7 +103,9 @@ function game() {
         ++computerScore 
         para2.textContent = `Computer score: ${computerScore}`;
     } else if (result === "its a tie") {
-        return;
+        const p2 = document.createElement('p');
+        p2.textContent = '(draw, no points.)'
+        selection.appendChild(p2);
     }
 
     
