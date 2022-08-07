@@ -57,6 +57,13 @@ function playRound(playerSelection) {
 }
 
 const results = document.getElementById('results');
+
+const para1 = document.createElement('p');
+const para2 = document.createElement('p');
+results.appendChild(para1);
+results.appendChild(para2);
+
+
 const rock = document.getElementById('rock');
 const paper = document.getElementById('paper');
 const scissors = document.getElementById('scissors');
@@ -96,12 +103,12 @@ function game() {
 
     if (result === "you won") {
         ++playerScore
-        results.textContent = `computer score: ${computerScore}   player score: ${playerScore}`
+        para1.textContent = `computer score: ${playerScore}`
     } else if (result === "you lost") {
         ++computerScore 
-        results.textContent = `computer score: ${computerScore}   player score: ${playerScore}`
+        para2.textContent = `player score: ${computerScore}`
     } else if (result === "its a tie") {
-        results.textContent = `computer score: ${computerScore}   player score: ${playerScore}`
+        return;
     }
 
         console.log(playerScore)
