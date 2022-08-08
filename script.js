@@ -103,9 +103,7 @@ function game() {
         ++computerScore 
         para2.textContent = `Computer score: ${computerScore}`;
     } else if (result === "its a tie") {
-        const p2 = document.createElement('p');
-        p2.textContent = '(draw, no points.)'
-        selection.appendChild(p2);
+        selection.textContent = `(draw, no points)`;
     }
 
     
