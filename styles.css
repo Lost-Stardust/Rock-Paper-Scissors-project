@@ -54,6 +54,8 @@ button {
     width: 150px;
     height: 110px;
     transition: width .5s;
+    font-size: 50px;
+    color: #9b06ff;
 }
 
 #results {
