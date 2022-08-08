@@ -10,6 +10,12 @@ body {
 
 h1 {
     font-size: 50px;
+    margin-top: 30px;
+    margin-bottom: 0px;
+}
+h3 {
+    font-size: 30px;
+    margin-bottom: 40px;
 }
 
 button {
@@ -18,20 +24,36 @@ button {
     border-radius: 4px;
     border: none;
     font-family: 'Amarante', cursive;
+    background-color: #E1E2EF;
 }
-
+#playAgain:hover {
+    box-shadow: rgba(169, 39, 255, 0.4) -5px 5px, rgba(169, 39, 255, 0.4) -10px 10px;
+    width: 190px;
+    transition: 300ms ease-in-out;
+}
+#playAgain {
+    width: 160px;
+    transition: width .5s;
+}
 #rock:hover {
     box-shadow: rgba(169, 39, 255, 0.4) -5px 5px, rgba(169, 39, 255, 0.4) -10px 10px;
+    transition: 300ms ease-in-out;
+    width: 200px;
 }
 #paper:hover {
     box-shadow: rgba(169, 39, 255, 0.4) 0px 5px, rgba(169, 39, 255, 0.4) 0px 10px;
+    transition: 300ms ease-in-out;
+    width: 200px;
 }
 #scissors:hover {
     box-shadow: rgba(169, 39, 255, 0.4) 5px 5px, rgba(169, 39, 255, 0.4) 10px 10px;
+    transition: 300ms ease-in-out;
+    width: 200px;
 }
 #rock, #paper, #scissors {
-    background-color: #E1E2EF;
-    color: #9b06ff;
+    width: 150px;
+    height: 110px;
+    transition: width .5s;
 }
 
 #results {
@@ -52,12 +74,16 @@ p {
     border: 1px solid black;
     border-radius: 10px;
     z-index: 10;
-    background-color: white;
-    width: 300px;
+    background-color: #424242;
+    width: 600px;
+    height: 100px;
     max-width: 80%;
     display: flex;
+    
     justify-content: center;
-    padding: 10px;
+    align-items: center;
+    padding: 20px;
+    
 }
 #modal.active{
     transform: translate(-50%, -50%) scale(1);
@@ -76,4 +102,7 @@ p {
 #overlay.active {
     pointer-events: all;
     opacity: 1;
+}
+#selection {
+    font-size: 30px;
 }
