@@ -3,6 +3,9 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    background-color: #424242;
+    color: #9b06ff;
+    font-family: 'Amarante', cursive;
 }
 
 h1 {
@@ -12,17 +15,23 @@ h1 {
 button {
     font-size: 30px;
     margin: 15px;
-    border-radius: 40px;
+    border-radius: 4px;
+    border: none;
+    font-family: 'Amarante', cursive;
 }
 
 #rock:hover {
-    background-color: red;
+    box-shadow: rgba(169, 39, 255, 0.4) -5px 5px, rgba(169, 39, 255, 0.4) -10px 10px;
 }
 #paper:hover {
-    background-color: blue;
+    box-shadow: rgba(169, 39, 255, 0.4) 0px 5px, rgba(169, 39, 255, 0.4) 0px 10px;
 }
 #scissors:hover {
-    background-color: yellow;
+    box-shadow: rgba(169, 39, 255, 0.4) 5px 5px, rgba(169, 39, 255, 0.4) 10px 10px;
+}
+#rock, #paper, #scissors {
+    background-color: #E1E2EF;
+    color: #9b06ff;
 }
 
 #results {
